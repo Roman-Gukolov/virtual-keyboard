@@ -3,7 +3,7 @@ export default function create(el, classNames, child, parent, ...attrs) {
   try {
     element = document.createElement(el);
   } catch (error) {
-    throw new Error('Error creating element - invalid tag name.');
+    throw new Error(`Error creating element - invalid tag name ${String(el)}: ${error}`);
   }
 
   if (classNames) {
